@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>let</title>
+  </head>
+  <body>
+    <h1>JavaScript <code>let</code> Keyword (ES6 / 2015)</h1>
+
+    <h2>1. Introduced in ES6 (2015)</h2>
+    <pre><code>
+let x = 10;
+console.log(x); // 10
+    </code></pre>
+
+    <h2>2. Block Scope</h2>
+    <pre><code>
+{
+    let a = 5;
+    console.log(a); // 5
+}
+console.log(a); // Error: a is not defined
+    </code></pre>
+
+    <h2>3. Must be declared before use</h2>
+    <pre><code>
+console.log(b); // Error: Cannot access 'b' before initialization
+let b = 20;
+    </code></pre>
+
+    <h2>4. Cannot be redeclared in the same scope</h2>
+    <pre><code>
+let c = 10;
+let c = 20; // Error: Identifier 'c' has already been declared
+    </code></pre>
+
+    <h3>But you can declare it in a different block:</h3>
+    <pre><code>
+let d = 1;
+{
+    let d = 2; // Different block scope
+    console.log(d); // 2
+}
+console.log(d); // 1
+    </code></pre>
+
+    <h2>5. Key Differences Between <code>var</code> and <code>let</code></h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Feature</th>
+            <th>var</th>
+            <th>let</th>
+        </tr>
+        <tr>
+            <td>Scope</td>
+            <td>Function</td>
+            <td>Block</td>
+        </tr>
+        <tr>
+            <td>Hoisting</td>
+            <td>Yes (initialized as undefined)</td>
+            <td>Yes, but cannot use before declaration (temporal dead zone)</td>
+        </tr>
+        <tr>
+            <td>Redeclare in same scope</td>
+            <td>Allowed</td>
+            <td>Not allowed</td>
+        </tr>
+    </table>
+</body>
+</html>
