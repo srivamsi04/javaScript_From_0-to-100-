@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript <code>const</code> Keyword (ES6 / 2015)</h1>
+
+    <h2>1. Introduction</h2>
+    <p>
+        The <code>const</code> keyword was introduced in ES6 (2015). 
+        Variables defined with <code>const</code> have <strong>block scope</strong>, cannot be redeclared, 
+        and cannot be reassigned. <code>const</code> ensures that the variable reference remains constant.
+    </p>
+
+    <h2>2. Cannot be Reassigned</h2>
+    <p>Variables declared with <code>const</code> cannot be reassigned:</p>
+    <pre><code>
+// Example
+const PI = 3.141592653589793;
+PI = 3.14;      // ERROR: Cannot reassign
+PI = PI + 10;   // ERROR: Cannot reassign
+    </code></pre>
+
+    <h2>3. Must be Assigned When Declared</h2>
+    <p>Variables must have a value assigned at the time of declaration:</p>
+    <pre><code>
+// Correct
+const PI = 3.14159265359;
+
+// Incorrect
+const PI2;       // ERROR: Missing initializer
+PI2 = 3.1415;
+    </code></pre>
+
+    <h2>4. Block Scope</h2>
+    <p>Variables declared with <code>const</code> exist only within the block they are defined:</p>
+    <pre><code>
+{
+    const a = 10;
+    console.log(a); // 10
+}
+console.log(a); // ERROR: a is not defined
+    </code></pre>
+
+    <h2>5. Constant Arrays</h2>
+    <p>You can modify elements of a constant array, but you cannot reassign the array itself:</p>
+    <pre><code>
+// Create a constant array
+const cars = ["Saab", "Volvo", "BMW"];
+
+// Modify an element
+cars[0] = "Toyota";
+
+// Add a new element
+cars.push("Audi");
+
+// Reassign the array (not allowed)
+cars = ["Toyota", "Volvo", "Audi"]; // ERROR
+    </code></pre>
+
+    <h2>6. Constant Objects</h2>
+    <p>You can modify properties of a constant object, but you cannot reassign the object itself:</p>
+    <pre><code>
+// Create a constant object
+const car = {type: "Fiat", model: "500", color: "white"};
+
+// Change a property
+car.color = "red";
+
+// Add a new property
+car.owner = "Johnson";
+
+// Reassign the object (not allowed)
+car = {type: "Volvo", model: "EX60", color: "red"}; // ERROR
+    </code></pre>
+
+    <h2>7. Redeclare in Same Scope</h2>
+    <p>You cannot redeclare a variable with <code>const</code> in the same block:</p>
+    <pre><code>
+const name = "Alice";
+const name = "Bob"; // ERROR: Identifier 'name' has already been declared
+    </code></pre>
+
+    <h2>8. Hoisting and Temporal Dead Zone</h2>
+    <p>Const is hoisted but cannot be used before declaration (temporal dead zone):</p>
+    <pre><code>
+console.log(myConst); // ERROR: Cannot access 'myConst' before initialization
+const myConst = 100;
+    </code></pre>
+
+    <h2>9. When to Use <code>const</code></h2>
+    <p>Use <code>const</code> when the variable value should not be reassigned:</p>
+    <pre><code>
+// Array
+const numbers = [1, 2, 3];
+
+// Object
+const person = {name: "John", age: 30};
+
+// Function
+const greet = function() {
+    console.log("Hello");
+};
+
+// RegExp
+const pattern = /abc/;
+    </code></pre>
+
+    <h2>10. Extra Notes / Best Practices</h2>
+    <ul>
+        <li><strong>Const does not make objects immutable:</strong> Object properties or array elements can still be changed.
+            <pre><code>
+const arr = [1, 2, 3];
+arr[0] = 10;  // Allowed
+arr.push(4);  // Allowed
+arr = [5,6];  // ERROR
+            </code></pre>
+        </li>
+        <li>Use <code>Object.freeze()</code if you want an object to be truly immutable:
+            <pre><code>
+const obj = Object.freeze({name:"John"});
+obj.name = "Alice"; // Ignored, object is frozen
+            </code></pre>
+        </li>
+        <li>Always prefer <code>const</code> for values that should not change, and <code>let</code> for variables that will change.</li>
+    </ul>
+
+    <h2>11. Comparison Table: <code>var</code>, <code>let</code>, <code>const</code></h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Feature</th>
+            <th>var</th>
+            <th>let</th>
+            <th>const</th>
+        </tr>
+        <tr>
+            <td>Scope</td>
+            <td>Function</td>
+            <td>Block</td>
+            <td>Block</td>
+        </tr>
+        <tr>
+            <td>Redeclare</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>Reassign</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>Hoisted</td>
+            <td>Yes</td>
+            <td>Yes (temporal dead zone)</td>
+            <td>Yes (temporal dead zone)</td>
+        </tr>
+        <tr>
+            <td>Binds to this</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+    </table>
+</body>
+</html>ty

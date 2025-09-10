@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Operators</h1>
+    <p>Operators are used for mathematical, logical, and assignment computations.</p>
+
+    <h2>1. Assignment Operator (=)</h2>
+    <p>The assignment operator assigns a value to a variable:</p>
+    <pre><code>
+// Examples
+let x = 10; // Assign 10 to x
+let x2 = 5; // Assign 5 to x2
+let y = 2;  // Assign 2 to y
+let z = x2 + y; // Assign sum of x2 + y to z
+console.log(z); // 7
+    </code></pre>
+
+    <h2>2. Addition Operator (+)</h2>
+    <p>Adds numbers or concatenates strings:</p>
+    <pre><code>
+// Numbers
+let a = 5;
+let b = 2;
+let sum = a + b; 
+console.log(sum); // 7
+
+// Strings
+let text1 = "John";
+let text2 = "Doe";
+let fullName = text1 + " " + text2;
+console.log(fullName); // "John Doe"
+    </code></pre>
+
+    <h3>Using += for Addition/Concatenation</h3>
+    <pre><code>
+let text = "What a very ";
+text += "nice day";
+console.log(text); // "What a very nice day"
+    </code></pre>
+
+    <h3>Adding Numbers and Strings</h3>
+    <pre><code>
+let x1 = 5 + 5;      // 10
+let y1 = "5" + 5;    // "55"
+let z1 = "Hello" + 5; // "Hello5"
+console.log(x1, y1, z1);
+    </code></pre>
+
+    <h2>3. Multiplication Operator (*)</h2>
+    <pre><code>
+let x = 5;
+let y = 2;
+let result = x * y;
+console.log(result); // 10
+    </code></pre>
+
+    <h2>4. Arithmetic Operators</h2>
+    <pre><code>
+let a = 3;
+let total = (100 + 50) * a; // 450
+console.log(total);
+
+// Common arithmetic operators
+// + Addition
+// - Subtraction
+// * Multiplication
+// ** Exponentiation
+// / Division
+// % Modulus
+// ++ Increment
+// -- Decrement
+    </code></pre>
+
+    <h2>5. Assignment Operators</h2>
+    <pre><code>
+let x = 10;
+x += 5; // x = x + 5
+x -= 3; // x = x - 3
+x *= 2; // x = x * 2
+x /= 4; // x = x / 4
+x %= 3; // x = x % 3
+x **= 2; // x = x ** 2
+console.log(x);
+    </code></pre>
+
+    <h2>6. Comparison Operators</h2>
+    <p>Compare values and return <code>true</code> or <code>false</code>:</p>
+    <pre><code>
+let x = 5;
+console.log(x == 5);   // true
+console.log(x === 5);  // true
+console.log(x != 5);   // false
+console.log(x !== 5);  // false
+console.log(x > 5);    // false
+console.log(x < 5);    // false
+console.log(x >= 5);   // true
+console.log(x <= 5);   // true
+
+// String comparison
+let text1 = "A";
+let text2 = "B";
+console.log(text1 < text2); // true (alphabetical comparison)
+    </code></pre>
+
+    <h2>7. Logical Operators</h2>
+    <pre><code>
+let a = true;
+let b = false;
+
+console.log(a && b); // false (logical AND)
+console.log(a || b); // true  (logical OR)
+console.log(!a);     // false (logical NOT)
+    </code></pre>
+
+    <h2>8. Types of Operators in JavaScript</h2>
+    <ul>
+        <li>Arithmetic Operators (+, -, *, /, %, **, ++, --)</li>
+        <li>Assignment Operators (=, +=, -=, *=, /=, %=, **=)</li>
+        <li>Comparison Operators (==, ===, !=, !==, >, <, >=, <=)</li>
+        <li>Logical Operators (&&, ||, !)</li>
+        <li>Others (Bitwise, Conditional, typeof, instanceof, etc.)</li>
+    </ul>
+</body>
+
+
+</html>
