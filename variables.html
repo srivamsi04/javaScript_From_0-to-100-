@@ -10,9 +10,14 @@
     <p>
         lets try of adding "5"+3+2 = <b id="var"></b>;
     </p>
+    <p>
+        lets try of adding 5+3+"2" = <b id="numString"></b>
+    </p>
     <script>
         let x="5"+3+2;
         document.getElementById("var").innerHTML=x;
+        let y=5+3+"2";
+        document.getElementById("numString").innerHTML=y;
     </script>
 </body>
 </html>
